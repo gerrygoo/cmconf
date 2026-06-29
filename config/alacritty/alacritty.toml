@@ -1,0 +1,21 @@
+[window]
+dimensions = { columns = 120, lines = 60 }
+padding = { x = 2, y = 2 }
+decorations = "none" # or "full", "buttonless"
+# opacity = 0.8 # 0.0 to 1.0
+
+
+[colors.primary]
+background = "0x000000" # Set the background color to black
+
+[font]
+# normal = { family = "3270 Nerd Font", style = "Regular" }
+# bold = { family = "3270 Nerd Font", style = "Bold" }
+# italic = { family = "3270 Nerd Font", style = "Italic" }
+# bold_italic = { family = "3270 Nerd Font", style = "Bold Italic" }
+
+normal = { family = "CaskaydiaMono Nerd Font", style = "Regular" }
+bold = { family = "CaskaydiaMono Nerd Font", style = "Bold" }
+italic = { family = "CaskaydiaMono Nerd Font", style = "Italic" }
+bold_italic = { family = "CaskaydiaMono Nerd Font", style = "Bold Italic" }
+size = 14.5
