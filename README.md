@@ -14,7 +14,6 @@ config/
   nvim/          LazyVim + catppuccin theme
   alacritty/     terminal emulator config
   starship.toml  prompt theme
-tmux.conf        tmux with vim bindings, tpm, catppuccin
 gitconfig        personal git identity
 ```
 
@@ -65,10 +64,6 @@ gitconfig        personal git identity
    [".config/starship.toml"]
        type = "file"
        url = "https://raw.githubusercontent.com/gerrygoo/cmconf/main/config/starship.toml"
-
-   [".tmux.conf"]
-       type = "file"
-       url = "https://raw.githubusercontent.com/gerrygoo/cmconf/main/tmux.conf"
 
    [".gitconfig"]
        type = "file"
@@ -124,3 +119,7 @@ To add a new config file:
 1. Add it to this repo under the appropriate directory
 2. Add a matching entry in `.chezmoiexternal.toml` on each consuming machine
 3. Run `chezmoi apply --refresh-externals`
+
+## History
+
+- **tmux** (tmux.conf: vim bindings, tpm, catppuccin) was replaced by zellij. Last version is at tag `tmux-last` (`git show tmux-last:tmux.conf`).
