@@ -15,6 +15,7 @@ config/
   alacritty/     terminal emulator config
   zellij/        terminal multiplexer (catppuccin-mocha)
   starship.toml  prompt theme
+  tridactyl/     Firefox vim bindings (Google app quickmarks; needs :nativeinstall)
 gitconfig        personal git identity
 ```
 
@@ -67,6 +68,10 @@ gitconfig        personal git identity
        url = "https://github.com/gerrygoo/cmconf/archive/main.tar.gz"
        stripComponents = 3
        include = ["*/config/zellij/**"]
+
+   [".config/tridactyl/tridactylrc"]
+       type = "file"
+       url = "https://raw.githubusercontent.com/gerrygoo/cmconf/main/config/tridactyl/tridactylrc"
 
    [".config/starship.toml"]
        type = "file"

@@ -1,0 +1,15 @@
+" Tridactyl config. Needs the native messenger (:nativeinstall) to load from disk.
+
+sanitise tridactyllocal tridactylsync
+
+" Google apps: go{key} opens here, gn{key} opens in a new tab
+quickmark c https://calendar.google.com/calendar/
+quickmark m https://mail.google.com/mail/
+quickmark d https://docs.google.com/document/
+quickmark s https://docs.google.com/spreadsheets/
+quickmark p https://docs.google.com/presentation/
+
+" These apps have their own keyboard shortcuts; keep Tridactyl out of the way
+autocmd DocStart calendar.google.com mode ignore
+autocmd DocStart mail.google.com mode ignore
+autocmd DocStart docs.google.com mode ignore
