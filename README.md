@@ -15,7 +15,7 @@ config/
   alacritty/     terminal emulator config
   zellij/        terminal multiplexer (catppuccin-mocha)
   starship.toml  prompt theme
-  tridactyl/     Firefox vim bindings (Google app quickmarks; needs :nativeinstall)
+  tridactyl/     Firefox vim bindings, disabled on Google apps (needs :nativeinstall)
 gitconfig        personal git identity
 ```
 
