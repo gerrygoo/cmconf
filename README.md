@@ -13,19 +13,24 @@ zsh/
 config/
   nvim/          LazyVim + catppuccin theme
   alacritty/     terminal emulator config
-  zellij/        terminal multiplexer (catppuccin-mocha)
   starship.toml  prompt theme
   tridactyl/     Firefox vim bindings, disabled on Google apps (needs :nativeinstall)
 gitconfig        personal git identity
+chezmoi/         chezmoi source (see below)
+  .chezmoiexternal.toml.tmpl   pulls the files above; per-OS entries (alacritty is macOS-only)
+  dot_config/zellij/config.kdl.tmpl   zellij config (catppuccin-mocha); copy_command is macOS-only
 ```
 
 ## Usage
 
 ### A) Fresh machine setup
 
-The chezmoi source (`.chezmoiexternal.toml`, `dot_zshrc`, `dot_zshenv`) lives in
-`chezmoi/` in this repo; `.chezmoiroot` points chezmoi at it. The rest of the repo is the
-content that the externals pull in.
+The chezmoi source (`.chezmoiexternal.toml.tmpl`, `dot_zshrc`, `dot_zshenv`, `dot_config/zellij/`)
+lives in `chezmoi/` in this repo; `.chezmoiroot` points chezmoi at it. The rest of the repo is the
+content that the externals pull in. Files in the source can be templates (`.tmpl`) for per-OS
+differences, e.g. `{{ if eq .chezmoi.os "darwin" }}`; externals are pulled verbatim, so anything
+that needs per-OS lines has to live in the source instead. Changes to the source itself need
+`chezmoi update` (git pull + apply); changes to externals need `chezmoi apply --refresh-externals`.
 
 ```bash
 sh -c "$(curl -fsLS get.chezmoi.io)" -- -b ~/.local/bin

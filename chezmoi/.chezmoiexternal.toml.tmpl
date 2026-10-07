@@ -20,17 +20,13 @@
     stripComponents = 3
     include = ["*/config/nvim/**"]
 
+{{ if eq .chezmoi.os "darwin" -}}
 [".config/alacritty"]
     type = "archive"
     url = "https://github.com/gerrygoo/cmconf/archive/main.tar.gz"
     stripComponents = 3
     include = ["*/config/alacritty/**"]
-
-[".config/zellij"]
-    type = "archive"
-    url = "https://github.com/gerrygoo/cmconf/archive/main.tar.gz"
-    stripComponents = 3
-    include = ["*/config/zellij/**"]
+{{ end }}
 
 [".config/tridactyl/tridactylrc"]
     type = "file"
