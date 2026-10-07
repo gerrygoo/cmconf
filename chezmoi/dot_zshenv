@@ -1,0 +1,2 @@
+# non-interactive shells (ssh host cmd) skip .zshrc
+export PATH="$HOME/.local/bin:$PATH"

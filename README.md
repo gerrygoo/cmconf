@@ -23,77 +23,17 @@ gitconfig        personal git identity
 
 ### A) Fresh machine setup
 
-1. Install chezmoi:
-   ```bash
-   sh -c "$(curl -fsLS get.chezmoi.io)"
-   ```
+The chezmoi source (`.chezmoiexternal.toml`, `dot_zshrc`, `dot_zshenv`) lives in
+`chezmoi/` in this repo; `.chezmoiroot` points chezmoi at it. The rest of the repo is the
+content that the externals pull in.
 
-2. Init a minimal chezmoi source:
-   ```bash
-   chezmoi init
-   ```
+```bash
+sh -c "$(curl -fsLS get.chezmoi.io)" -- -b ~/.local/bin
+chezmoi init gerrygoo/cmconf
+chezmoi apply
+```
 
-3. Create `~/.local/share/chezmoi/.chezmoiexternal.toml`:
-   ```toml
-   [".zsh/path.sh"]
-       type = "file"
-       url = "https://raw.githubusercontent.com/gerrygoo/cmconf/main/zsh/path.sh"
-
-   [".zsh/shell.sh"]
-       type = "file"
-       url = "https://raw.githubusercontent.com/gerrygoo/cmconf/main/zsh/shell.sh"
-
-   [".zsh/editor.sh"]
-       type = "file"
-       url = "https://raw.githubusercontent.com/gerrygoo/cmconf/main/zsh/editor.sh"
-
-   [".zsh/git.sh"]
-       type = "file"
-       url = "https://raw.githubusercontent.com/gerrygoo/cmconf/main/zsh/git.sh"
-
-   [".config/nvim"]
-       type = "archive"
-       url = "https://github.com/gerrygoo/cmconf/archive/main.tar.gz"
-       stripComponents = 3
-       include = ["*/config/nvim/**"]
-
-   [".config/alacritty"]
-       type = "archive"
-       url = "https://github.com/gerrygoo/cmconf/archive/main.tar.gz"
-       stripComponents = 3
-       include = ["*/config/alacritty/**"]
-
-   [".config/zellij"]
-       type = "archive"
-       url = "https://github.com/gerrygoo/cmconf/archive/main.tar.gz"
-       stripComponents = 3
-       include = ["*/config/zellij/**"]
-
-   [".config/tridactyl/tridactylrc"]
-       type = "file"
-       url = "https://raw.githubusercontent.com/gerrygoo/cmconf/main/config/tridactyl/tridactylrc"
-
-   [".config/starship.toml"]
-       type = "file"
-       url = "https://raw.githubusercontent.com/gerrygoo/cmconf/main/config/starship.toml"
-
-   [".gitconfig"]
-       type = "file"
-       url = "https://raw.githubusercontent.com/gerrygoo/cmconf/main/gitconfig"
-   ```
-
-4. Create a minimal `~/.local/share/chezmoi/dot_zshrc`:
-   ```bash
-   source ~/.zsh/path.sh
-   source ~/.zsh/shell.sh
-   source ~/.zsh/editor.sh
-   source ~/.zsh/git.sh
-   ```
-
-5. Apply:
-   ```bash
-   chezmoi apply
-   ```
+Tools the configs expect: zsh, oh-my-zsh, starship, zoxide, fzf, neovim, zellij.
 
 ### B) Daily operations
 
@@ -129,7 +69,7 @@ chezmoi apply --refresh-externals
 
 To add a new config file:
 1. Add it to this repo under the appropriate directory
-2. Add a matching entry in `.chezmoiexternal.toml` on each consuming machine
+2. Add a matching entry in `chezmoi/.chezmoiexternal.toml`, commit and push
 3. Run `chezmoi apply --refresh-externals`
 
 ## History

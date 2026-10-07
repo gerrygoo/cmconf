@@ -1,0 +1,45 @@
+[".zsh/path.sh"]
+    type = "file"
+    url = "https://raw.githubusercontent.com/gerrygoo/cmconf/main/zsh/path.sh"
+
+[".zsh/shell.sh"]
+    type = "file"
+    url = "https://raw.githubusercontent.com/gerrygoo/cmconf/main/zsh/shell.sh"
+
+[".zsh/editor.sh"]
+    type = "file"
+    url = "https://raw.githubusercontent.com/gerrygoo/cmconf/main/zsh/editor.sh"
+
+[".zsh/git.sh"]
+    type = "file"
+    url = "https://raw.githubusercontent.com/gerrygoo/cmconf/main/zsh/git.sh"
+
+[".config/nvim"]
+    type = "archive"
+    url = "https://github.com/gerrygoo/cmconf/archive/main.tar.gz"
+    stripComponents = 3
+    include = ["*/config/nvim/**"]
+
+[".config/alacritty"]
+    type = "archive"
+    url = "https://github.com/gerrygoo/cmconf/archive/main.tar.gz"
+    stripComponents = 3
+    include = ["*/config/alacritty/**"]
+
+[".config/zellij"]
+    type = "archive"
+    url = "https://github.com/gerrygoo/cmconf/archive/main.tar.gz"
+    stripComponents = 3
+    include = ["*/config/zellij/**"]
+
+[".config/tridactyl/tridactylrc"]
+    type = "file"
+    url = "https://raw.githubusercontent.com/gerrygoo/cmconf/main/config/tridactyl/tridactylrc"
+
+[".config/starship.toml"]
+    type = "file"
+    url = "https://raw.githubusercontent.com/gerrygoo/cmconf/main/config/starship.toml"
+
+[".gitconfig"]
+    type = "file"
+    url = "https://raw.githubusercontent.com/gerrygoo/cmconf/main/gitconfig"
