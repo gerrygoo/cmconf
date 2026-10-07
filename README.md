@@ -13,6 +13,7 @@ zsh/
 config/
   nvim/          LazyVim + catppuccin theme
   alacritty/     terminal emulator config
+  zellij/        terminal multiplexer (catppuccin-mocha)
   starship.toml  prompt theme
 gitconfig        personal git identity
 ```
@@ -60,6 +61,12 @@ gitconfig        personal git identity
        url = "https://github.com/gerrygoo/cmconf/archive/main.tar.gz"
        stripComponents = 3
        include = ["*/config/alacritty/**"]
+
+   [".config/zellij"]
+       type = "archive"
+       url = "https://github.com/gerrygoo/cmconf/archive/main.tar.gz"
+       stripComponents = 3
+       include = ["*/config/zellij/**"]
 
    [".config/starship.toml"]
        type = "file"
