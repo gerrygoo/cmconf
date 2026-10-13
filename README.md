@@ -16,8 +16,9 @@ config/
   starship.toml  prompt theme
   tridactyl/     Firefox vim bindings, disabled on Google apps (needs :nativeinstall)
 gitconfig        personal git identity
+bootstrap-ubuntu.sh   installs the tools and applies this repo on a fresh Ubuntu box
 chezmoi/         chezmoi source (see below)
-  .chezmoiexternal.toml.tmpl   pulls the files above; per-OS entries (alacritty is macOS-only)
+  .chezmoiexternal.toml.tmpl   pulls the files above; per-OS entries (alacritty, tridactyl are macOS-only)
   dot_config/zellij/config.kdl.tmpl   zellij config (catppuccin-mocha); copy_command is macOS-only
 ```
 
@@ -39,6 +40,13 @@ chezmoi apply
 ```
 
 Tools the configs expect: zsh, oh-my-zsh, starship, zoxide, fzf, neovim, zellij.
+
+**Ubuntu:** run the bootstrap script instead; it installs those tools (neovim and zellij from
+release tarballs), runs `chezmoi init --apply`, and sets zsh as the login shell.
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/gerrygoo/cmconf/main/bootstrap-ubuntu.sh | bash
+```
 
 ### B) Daily operations
 

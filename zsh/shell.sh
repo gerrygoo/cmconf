@@ -1,11 +1,12 @@
 # shell.sh — shell framework, prompt, navigation
+# Each tool is optional: a fresh machine without them gets a plain shell, not errors.
 
 export ZSH="$HOME/.oh-my-zsh"
 plugins=(git fzf)
-source $ZSH/oh-my-zsh.sh
+[[ -r $ZSH/oh-my-zsh.sh ]] && source $ZSH/oh-my-zsh.sh
 
-eval "$(starship init zsh)"
-eval "$(zoxide init zsh)"
+command -v starship >/dev/null && eval "$(starship init zsh)"
+command -v zoxide >/dev/null && eval "$(zoxide init zsh)"
 
 alias so='source ~/.zshrc'
 

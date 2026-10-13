@@ -28,9 +28,11 @@
     include = ["*/config/alacritty/**"]
 {{ end }}
 
+{{ if eq .chezmoi.os "darwin" -}}
 [".config/tridactyl/tridactylrc"]
     type = "file"
     url = "https://raw.githubusercontent.com/gerrygoo/cmconf/main/config/tridactyl/tridactylrc"
+{{ end }}
 
 [".config/starship.toml"]
     type = "file"
