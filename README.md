@@ -9,7 +9,8 @@ zsh/
   path.sh        PATH management utilities (prepend_to_path, append_to_path)
   shell.sh       oh-my-zsh, starship, zoxide, chezmoi aliases
   editor.sh      EDITOR=nvim, aliases
-  git.sh         git aliases (gs, gpp, ghprcd, gai)
+  git.sh         git aliases (gs, gpp, gppa, ghprcd, gai)
+  git-pull-all.sh  pull every repo under ~/code (gppa)
 config/
   nvim/          LazyVim + catppuccin theme
   alacritty/     terminal emulator config

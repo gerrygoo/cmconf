@@ -2,6 +2,7 @@
 
 alias gs='git status'
 alias gpp='git pull --prune'
+alias gppa='bash ~/.zsh/git-pull-all.sh'
 alias gyolopush='git commit -a --amend --no-edit && git push -f'
 
 # PR
